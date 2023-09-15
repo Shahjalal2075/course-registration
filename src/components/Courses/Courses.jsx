@@ -1,9 +1,10 @@
+import PropTypes from 'prop-types';
 import { useEffect } from "react";
 import { useState } from "react";
 import Course from "../Course/Course";
 import "./Courses.css";
 
-const Courses = () => {
+const Courses = ({handleAddToCart}) => {
 
     const [courses,setCourses]=useState([]);
 
@@ -11,7 +12,7 @@ const Courses = () => {
         fetch('coursedetails.json')
         .then(res => res.json())
         .then(data => setCourses(data))
-    }, [])
+    }, []);
 
     return (
         <div className="lg:w-3/4 md:w-3/4">
@@ -20,6 +21,7 @@ const Courses = () => {
                 courses.map(course => <Course 
                     key={course.id}
                     course={course}
+                    handleAddToCart={handleAddToCart}
                 >
                 </Course>)
             }
@@ -27,5 +29,9 @@ const Courses = () => {
         </div>
     );
 };
+
+Courses.propTypes = {
+    handleAddToCart: PropTypes.func
+}
 
 export default Courses;
