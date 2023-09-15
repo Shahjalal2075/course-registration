@@ -7,11 +7,18 @@ import Header from './components/Header'
 function App() {
 
   const [carts, setCarts] = useState([]);
+  const [credits,setCredits]=useState(0);
+  
 
   const handleAddToCart = course => {
     const newCart=[...carts, course];
     setCarts(newCart);
+    
+    const newCredit= parseInt(course.credit);
+    setCredits(credits+(newCredit));
   }
+
+  console.log(credits);
 
   return (
     <>
@@ -24,6 +31,7 @@ function App() {
           </Courses>
           <Carts
             carts={carts}
+            credits={credits}
           ></Carts>
         </div>
       </div>
