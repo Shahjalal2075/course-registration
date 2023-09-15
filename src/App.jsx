@@ -8,7 +8,7 @@ function App() {
 
   const [carts, setCarts] = useState([]);
   const [credits,setCredits]=useState(0);
-  
+  const [price,setPrice]=useState(0);
 
   const handleAddToCart = course => {
     const newCart=[...carts, course];
@@ -16,6 +16,9 @@ function App() {
     
     const newCredit= parseInt(course.credit);
     setCredits(credits+(newCredit));
+
+    const newPrice= parseInt(course.price);
+    setPrice(price+(newPrice));
   }
 
   console.log(credits);
@@ -32,6 +35,7 @@ function App() {
           <Carts
             carts={carts}
             credits={credits}
+            price={price}
           ></Carts>
         </div>
       </div>
