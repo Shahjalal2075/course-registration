@@ -15,8 +15,8 @@ const Courses = ({handleAddToCart}) => {
     }, []);
 
     return (
-        <div className="lg:w-3/4 md:w-3/4">
-            <div className="course-container">
+        <div className="lg:w-3/4">
+            <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-4  md:grid-cols-2 md:gap-4">
             {
                 courses.map(course => <Course 
                     key={course.id}

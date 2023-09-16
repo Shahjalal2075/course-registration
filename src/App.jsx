@@ -27,7 +27,7 @@ function App() {
     <>
       <div className="container mx-auto font-inter">
         <Header></Header>
-        <div className="flex flex-col md:flex-row lg:flex-row gap-1">
+        <div className="flex flex-col lg:flex-row gap-1">
           <Courses 
             handleAddToCart={handleAddToCart}
           >
