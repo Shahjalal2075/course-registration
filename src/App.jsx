@@ -14,23 +14,26 @@ function App() {
 
   const handleAddToCart = course => {
 
+    const newCredit= parseInt(course.credit);
     const isCart = carts.some(cart=>cart.id ===course.id);
 
-    if(!isCart)
-    {
-      const newCart=[...carts, course];
+      if((credits+(newCredit)<=20) && !isCart)
+      {
+        setCredits(credits+(newCredit));
+        
+        const newCart=[...carts, course];
+        setCarts(newCart);
 
-      setCarts(newCart);
-      
-      const newCredit= parseInt(course.credit);
-      setCredits(credits+(newCredit));
-
-      const newPrice= parseInt(course.price);
-      setPrice(price+(newPrice));
-    }
-    else{
-      toast("You Allready Add This Course.");
-    }
+        const newPrice= parseInt(course.price);
+        setPrice(price+(newPrice));
+      }
+      else if(isCart)
+      {
+        toast("You Allready Add This Course.");
+      }
+      else{
+        toast("You cannot exceed 20 credit hours.");
+      }
 
   }
 
