@@ -1,10 +1,16 @@
 # Features
 
 • You can select the course.
+
 • You can add courses to cart.
+
 • You cannot add more than 20 credit hours.
+
 • You can see cart list and remaining credit hours.
+
 • You can see totol credit hours and total prices.
+
+
 
 # Discuss State Managed
 
