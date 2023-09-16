@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import { useEffect } from "react";
 import { useState } from "react";
 import Course from "../Course/Course";
-import "./Courses.css";
 
 const Courses = ({handleAddToCart}) => {
 

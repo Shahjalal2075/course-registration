@@ -39,7 +39,7 @@ function App() {
 
   return (
     <>
-      <div className="container mx-auto font-inter">
+      <div className="container mx-auto font-inter mb-12">
         <Header></Header>
         <div className="flex flex-col lg:flex-row gap-1">
           <Courses 
