@@ -3,6 +3,8 @@ import './App.css'
 import Carts from './components/Carts/Carts'
 import Courses from './components/Courses/Courses'
 import Header from './components/Header'
+import {ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
 
@@ -11,17 +13,26 @@ function App() {
   const [price,setPrice]=useState(0);
 
   const handleAddToCart = course => {
-    const newCart=[...carts, course];
-    setCarts(newCart);
-    
-    const newCredit= parseInt(course.credit);
-    setCredits(credits+(newCredit));
 
-    const newPrice= parseInt(course.price);
-    setPrice(price+(newPrice));
+    const isCart = carts.some(cart=>cart.id ===course.id);
+
+    if(!isCart)
+    {
+      const newCart=[...carts, course];
+
+      setCarts(newCart);
+      
+      const newCredit= parseInt(course.credit);
+      setCredits(credits+(newCredit));
+
+      const newPrice= parseInt(course.price);
+      setPrice(price+(newPrice));
+    }
+    else{
+      toast("You Allready Add This Course.");
+    }
+
   }
-
-  console.log(credits);
 
   return (
     <>
@@ -32,6 +43,7 @@ function App() {
             handleAddToCart={handleAddToCart}
           >
           </Courses>
+          <ToastContainer></ToastContainer>
           <Carts
             carts={carts}
             credits={credits}
