@@ -1,3 +1,7 @@
+# Live Link
+
+link: https://course-registration-75.surge.sh/
+
 # Features
 
 • You can select the course.
@@ -12,7 +16,7 @@
 
 
 
-# Discuss State Managed
+<!-- # Discuss State Managed
 
 In this project I used UseState in 4 times.
 
@@ -29,6 +33,6 @@ Send a function App.jsx to Courses.jsx and Courses.jsx to Course.jsx page and se
 
 received cart data to check multiple data and credit count and price count then set in useState variable. 
 
-3 useState variable send to App.jsx to Carts.jsx and use this price,credit and cart item.
+3 useState variable send to App.jsx to Carts.jsx and use this price,credit and cart item. -->
 
 
